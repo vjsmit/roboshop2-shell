@@ -1,4 +1,4 @@
 source common.sh
-component=catalogue
+component=cart
 
 func_nodejs
