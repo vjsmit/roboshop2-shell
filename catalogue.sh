@@ -14,7 +14,7 @@ echo -e "\e${color}Add App user\e${nocolor}"
 #if [ $? -ne 0 ]; then
 #  useradd roboshop    &>>${logfile}
 #fi
-useradd roboshop
+useradd roboshop    &>>${logfile}
 stat_check $?
 
 echo -e "\e${color}Create App Dir\e${nocolor}"
