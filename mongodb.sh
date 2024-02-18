@@ -1,7 +1,7 @@
 source common.sh
 
 echo -e "${color}Setup repo file${nocolor}"
-cp /home/centos/roboshop2-shell /etc/yum.repos.d/mongo.repo     &>>${logfile}
+cp /home/centos/roboshop2-shell/mongo.repo /etc/yum.repos.d/mongo.repo     &>>${logfile}
 stat_check $?
 
 echo -e "${color}Install MongoDB${nocolor}"
