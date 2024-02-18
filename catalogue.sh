@@ -32,11 +32,11 @@ npm install   &>>${logfile}
 stat_check $?
 
 echo -e "\e${color}Setup Catalogue Service\e${nocolor}"
-cp /home/centos/roboshop2-shell/catalogue.sh /etc/systemd/system/catalogue.service    &>>${logfile}
+cp /home/centos/roboshop2-shell/catalogue.service /etc/systemd/system/catalogue.service    &>>${logfile}
 stat_check $?
 
 echo -e "\e${color}Start Catalogue Service\e${nocolor}"
-systemctl daemon-reload       &>>${logfile}
+systemctl daemon-reload   &>>${logfile}
 systemctl enable catalogue    &>>${logfile}
 systemctl restart catalogue   &>>${logfile}
 stat_check $?
