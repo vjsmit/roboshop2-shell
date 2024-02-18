@@ -14,4 +14,3 @@ stat_check() {
     echo -e "\e[31mFAILURE\e[0m"
   fi
 }
-x
