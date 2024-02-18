@@ -17,7 +17,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip   &>>${logfile}
 stat_check $?
 
-echo -e "${color}Copy reverse proxy config{nocolor}"
+echo -e "${color}Copy reverse proxy config${nocolor}"
 cp /home/centos/roboshop2-shell/frontend.conf /etc/nginx/default.d/roboshop.conf &>>${logfile}
 stat_check $?
 
