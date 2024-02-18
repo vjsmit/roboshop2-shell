@@ -8,11 +8,11 @@ echo -e "${color}Install MongoDB${nocolor}"
 dnf install mongodb-org -y    &>>${logfile}
 stat_check $?
 
-echo "${color}Update listen address${nocolor}"
+echo -e "${color}Update listen address${nocolor}"
 sed -i -e "s/127.0.0.1/0.0.0.0/" /etc/mongod.conf   &>>${logfile}
 stat_check $?
 
-echo "${color}Start MongoD service${nocolor}"
+echo -e "${color}Start MongoD service${nocolor}"
 systemctl enable mongod   &>>${logfile}
 systemctl restart mongod    &>>${logfile}
 stat_check $?
