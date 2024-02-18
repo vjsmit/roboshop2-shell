@@ -10,10 +10,11 @@ dnf install nodejs -y   &>>${logfile}
 stat_check $?
 
 echo -e "\e${color}Add App user\e${nocolor}"
-id roboshop   &>>${logfile}
-if [ $? -ne 0 ]; then
-  useradd roboshop    &>>${logfile}
-fi
+#id roboshop   &>>${logfile}
+#if [ $? -ne 0 ]; then
+#  useradd roboshop    &>>${logfile}
+#fi
+useradd roboshop
 stat_check $?
 
 echo -e "\e${color}Create App Dir\e${nocolor}"
