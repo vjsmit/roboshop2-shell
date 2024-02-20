@@ -124,7 +124,7 @@ func_python() {
 
 func_golang() {
   echo -e "${color}Install golang${nocolor}"
-  dnf install golang -y
+  dnf install golang -y   &>>${logfile}
   stat_check $?
 
   func_app_presetup
