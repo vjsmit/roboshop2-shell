@@ -1,4 +1,6 @@
 source common.sh
+component=dispatch
+
 roboshop_pwd=$1
 
 if [ -z "$roboshop_pwd" ]; then
