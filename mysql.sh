@@ -1,5 +1,11 @@
 source common.sh
 
+mysql_pwd=$1
+if [ -z "$mysql_pwd" ]; then
+  mysql password is missing, exiting
+  exit 1
+fi
+
 echo -e "${color}Disable MySQL 8 version${nocolor}"
 dnf module disable mysql -y     &>>{logfile}
 
@@ -14,4 +20,4 @@ systemctl enable mysqld   &>>{logfile}
 systemctl restart mysqld    &>>{logfile}
 
 echo -e "${color}Change the default root password${nocolor}"
-mysql_secure_installation --set-root-pass $1    &>>{logfile}
+mysql_secure_installation --set-root-pass ${mysql_pwd}    &>>{logfile}

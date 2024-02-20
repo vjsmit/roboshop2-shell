@@ -1,5 +1,12 @@
 source common.sh
 
+rabbitmq_pwd=$1
+
+if [ -z  "$rabbitmq_pwd" ]; then
+    rabbitmq password is missing, exiting
+    exit 1
+fi
+
 echo - e "${color}Configure Erlang YUM Repos${nocolor}"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash     &>>{logfile}
 stat_check $?
@@ -18,6 +25,6 @@ systemctl restart rabbitmq-server   &>>{logfile}
 stat_check $?
 
 echo - e "${color}Create one user for the app${nocolor}"
-rabbitmqctl add_user roboshop roboshop123   &>>{logfile}
+rabbitmqctl add_user roboshop ${rabbitmq_pwd}   &>>{logfile}
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"    &>>{logfile}
 stat_check $?

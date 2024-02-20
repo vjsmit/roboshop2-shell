@@ -74,13 +74,14 @@ func_mysql() {
   stat_check $?
 
   echo -e "${color}Load Schema${nocolor}"
-  mysql -h mysql-dev.smitdevops.online -uroot -pRoboShop@1 < /app/schema/shipping.sql   &>>${logfile}
+  mysql -h mysql-dev.smitdevops.online -uroot -p${mysql_pwd} < /app/schema/shipping.sql   &>>${logfile}
   stat_check $?
 }
 
 func_systemd(){
   echo -e "\e${color}Setup ${component} Service\e${nocolor}"
   cp /home/centos/roboshop2-shell/${component}.service /etc/systemd/system/${component}.service    &>>${logfile}
+  sed -i -e "s/roboshop_pwd/${roboshop_pwd}/" /etc/systemd/system/${component}.service  &>>${logfile}
   stat_check $?
 
   echo -e "\e${color}Start ${component} Service\e${nocolor}"
