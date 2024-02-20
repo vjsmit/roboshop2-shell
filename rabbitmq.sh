@@ -3,7 +3,7 @@ source common.sh
 rabbitmq_pwd=$1
 
 if [ -z  "$rabbitmq_pwd" ]; then
-    rabbitmq password is missing, exiting
+    echo rabbitmq password is missing, exiting
     exit 1
 fi
 
