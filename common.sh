@@ -74,7 +74,7 @@ func_mysql() {
   stat_check $?
 
   echo -e "${color}Load Schema${nocolor}"
-  mysql -h mysql-dev.smitdevops.online -uroot -p${mysql_pwd} < /app/schema/shipping.sql   &>>${logfile}
+  mysql -h mysql-dev.smitdevops.online -uroot -p${mysql_pwd} </app/schema/shipping.sql   &>>${logfile}
   stat_check $?
 }
 
