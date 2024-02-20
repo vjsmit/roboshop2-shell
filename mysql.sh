@@ -2,7 +2,7 @@ source common.sh
 
 mysql_pwd=$1
 if [ -z "$mysql_pwd" ]; then
-  mysql password is missing, exiting
+  echo mysql password is missing, exiting
   exit 1
 fi
 
