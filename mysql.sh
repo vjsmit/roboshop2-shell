@@ -14,4 +14,4 @@ systemctl enable mysqld   &>>{logfile}
 systemctl restart mysqld    &>>{logfile}
 
 echo -e "${color}Change the default root password${nocolor}"
-mysql_secure_installation --set-root-pass RoboShop@1    &>>{logfile}
+mysql_secure_installation --set-root-pass $1    &>>{logfile}
